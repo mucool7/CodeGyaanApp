@@ -1,10 +1,34 @@
-
-<div>
-
-  <div>
-      <ion-label>Create Content</ion-label>
-  </div>
-    <div (click)="closeModal()">
-       Close Modal
+<ion-content class="ion-padding">
+    <div class="" class="ion-text-center ion-padding" style="border-bottom: 2px solid #efefef">
+       <b> Create Content</b> <span (click)="closeModal()" style="float: right;"> <ion-icon slot="end" color="danger" name="close"></ion-icon></span>
     </div>
-</div>
+    <div class="ion-padding">
+
+        <div>
+                <ion-item>
+                        <ion-label position="stacked">Title</ion-label>
+                        <ion-input style="font-size: 12px;"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="stacked">Blocks</ion-label>
+                    <ion-input type="number"></ion-input>
+                </ion-item>
+            
+        </div>
+        <div>
+            <div style="padding: 8px 0px"><b> Character Scripts</b></div>
+            <div>
+                <div>Block 1</div>
+                <div>
+                   
+                    <ion-item>
+                            <ion-label position="stacked">Left Character</ion-label>
+                            <ion-textarea type="number" style="font-size: 12px;"></ion-textarea>
+                        </ion-item>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</ion-content>
