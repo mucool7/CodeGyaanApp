@@ -1,34 +1,54 @@
-<ion-content class="ion-padding">
-    <div class="" class="ion-text-center ion-padding" style="border-bottom: 2px solid #efefef">
-       <b> Create Content</b> <span (click)="closeModal()" style="float: right;"> <ion-icon slot="end" color="danger" name="close"></ion-icon></span>
-    </div>
-    <div class="ion-padding">
+<ion-content >
+    <div class="ion-padding" style="box-shadow: 0px 2px 3px #00000022">
+        <div class="" class="ion-text-center ion-padding" style="border-bottom: 2px solid #efefef">
+            <b> Create Content</b> <span (click)="closeModal()" style="float: right;">
+                <ion-icon slot="end" color="danger" name="close"></ion-icon>
+            </span>
+        </div>
+        <div class="ion-padding">
 
-        <div>
+            <div>
                 <ion-item>
-                        <ion-label position="stacked">Title</ion-label>
-                        <ion-input style="font-size: 12px;"></ion-input>
+                    <ion-label position="stacked">Title</ion-label>
+                    <ion-input style="font-size: 12px;"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label position="stacked">Blocks</ion-label>
                     <ion-input type="number"></ion-input>
                 </ion-item>
-            
-        </div>
-        <div>
-            <div style="padding: 8px 0px"><b> Character Scripts</b></div>
-            <div>
-                <div>Block 1</div>
-                <div>
-                   
-                    <ion-item>
-                            <ion-label position="stacked">Left Character</ion-label>
-                            <ion-textarea type="number" style="font-size: 12px;"></ion-textarea>
-                        </ion-item>
 
-                </div>
             </div>
         </div>
-
     </div>
+
+    <div style="background-color: #dfdfdf">
+        <div style="padding: 8px 8px;background-color: #efefef;font-size: 14px;text-transform: capitalize">
+            <div class="pColor"><b> Character Scripts</b></div>
+            <div><small><b>Enter the data in a story telling manner</b></small></div>
+        </div>
+        <div class="ion-padding" style="background-color: #fff">
+            <div class="ion-padding"><b>Block 1 </b><span style="float: right">
+                    <ion-icon slot="end" name="arrow-dropdown"></ion-icon>
+                </span> </div>
+            <div>
+
+                <ion-item>
+                    <ion-label position="stacked">Left Character</ion-label>
+                    <ion-textarea type="number" style="font-size: 12px;"></ion-textarea>
+                </ion-item>
+                <ion-item>
+                        <ion-label position="stacked">Right Character</ion-label>
+                        <ion-textarea type="number" style="font-size: 12px;"></ion-textarea>
+                </ion-item>
+                <div>
+                    <ion-button style="float: right" size="small">
+                        <ion-icon slot="start" name="arrow-round-forward" size="small" style="color: #fff !important"></ion-icon>
+                        Next
+                    </ion-button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 </ion-content>
