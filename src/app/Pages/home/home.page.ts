@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import {  ModalController } from "@ionic/angular";
-import { CreateFormModal } from '../Modals/CreateModal/CreateForm.Modal';
+import { CreateFormModal } from '../../Modals/CreateModal/CreateForm.Modal';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-home', 
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })

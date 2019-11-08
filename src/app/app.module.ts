@@ -9,9 +9,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CreateFormModal } from './Modals/CreateModal/CreateForm.Modal';
+import { DashboardPage } from './Pages/Dashboard/Dashboard.Page';
+import { HomePage } from './Pages/home/home.page';
 
 @NgModule({
-  declarations: [AppComponent,CreateFormModal],
+  declarations: [AppComponent,CreateFormModal,DashboardPage,HomePage],
   entryComponents: [CreateFormModal],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [

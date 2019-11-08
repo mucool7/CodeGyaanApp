@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, ModalController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { CreateFormModal } from './Modals/CreateModal/CreateForm.Modal';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    public modalController: ModalController
   ) {
     this.initializeApp();
   }
@@ -24,4 +26,12 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
+
+  async OpenCreateForm(){
+    const modal = await this.modalController.create({
+      component: CreateFormModal
+    })
+    return await modal.present();
+  }
+
 }
