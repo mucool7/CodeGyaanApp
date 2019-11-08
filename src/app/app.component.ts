@@ -4,6 +4,7 @@ import { Platform, ModalController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { CreateFormModal } from './Modals/CreateModal/CreateForm.Modal';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    public modalController: ModalController
+    public modalController: ModalController,
+    public router:Router
   ) {
     this.initializeApp();
   }
@@ -32,6 +34,11 @@ export class AppComponent {
       component: CreateFormModal
     })
     return await modal.present();
+  }
+
+  Navigate(path){
+
+    this.router.navigate([path]);
   }
 
 }

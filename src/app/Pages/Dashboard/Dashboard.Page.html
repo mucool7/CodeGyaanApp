@@ -1,3 +1,76 @@
 
+<style>
+    .p-tiles div {
+        background-color: #efefef;
+        padding: 4px;
+        margin: 2px;
+        border-bottom: 2px solid #5165c0
+    }
+    .p-tiles div div:nth-child(1){
+        font-weight: bold !important;
+        border: none;
+    }
+    .p-tiles div div:nth-child(2){
+        font-size: 13px !important; 
+        border: none;
+    }
+</style>
 
-<b>Dashboard</b>
+<div style="padding-top:8px ">
+
+    
+    <div style="padding: 10px;background-color: white;box-shadow: 0px 1px 3px #22222222">
+           <div style="padding: 8px 0px;"> <strong>Overview</strong></div>
+           <div style="text-align: center;padding: 4px;">
+               <div style="display: flex;" class="p-tiles">
+                    <div style="flex: 1">
+                            <div>20</div>
+                            <div>Creators</div>
+                    </div>
+                    <div style="flex: 1">
+                            <div>200 </div>
+                            <div>Contents</div>
+                    </div>
+                   
+                    <div style="flex: 1">
+                            <div>200</div>
+                            <div>Total</div>
+                    </div>
+               </div>
+           </div>
+    </div>
+    <div style="border-top: 1px solid #efefef;padding: 10px;background-color: white;box-shadow: 0px 1px 3px #22222222">
+            
+        <div>
+          
+               <ion-text color="danger" style="font-weight: bold">
+                   <small> Very few contents are left. Please create some contents.</small>
+               </ion-text>
+                 
+        </div>
+        <hr/>
+        <div style="border-top: 1px solid #efefef">
+            <div style="padding: 6px  0px;">
+                    <strong>Top Creators</strong>
+            </div>
+            <div style="padding: 4px;">
+
+                <ul style="list-style: none;margin: 0px;padding: 0px;">
+
+                    <li style="padding: 7px;" *ngFor="let item of [1,2,3,4,5]">
+                        Mukul Singh
+                        <span style="float: right;margin-top: -10px;"> 
+                        <ion-chip color="secondary" mode="md" size="small" outline="false">
+                            <ion-label>10</ion-label>
+                        </ion-chip> 
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            
+            
+
+        </div>
+     </div>
+
+</div>

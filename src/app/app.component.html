@@ -7,15 +7,17 @@
         style="text-align: center;color:White;font-weight: 600;background-color: #6486f5;border-radius:2px; ;box-shadow: 0px 2px 2px #00000033;padding: 8px;">
         CodeGyaan
       </div>
-      <div style="margin-top: 10px;max-height: 80vh;overflow-y:auto  ">
-        <ion-router-outlet></ion-router-outlet>
+    
+     
+        <router-outlet></router-outlet>
+        
 
       </div>
-    </div>
+   
 
   </ion-content>
 
-  <ion-footer style="">
+  <ion-footer >
     <div style="padding: 10px;">
       <ion-row>
         <ion-col size="3" class="ion-no-padding">
@@ -26,7 +28,7 @@
             <div style="margin-top: -10px"><small>Create</small></div>
           </div>
         </ion-col>
-        <ion-col size="3" class="ion-no-padding">
+        <ion-col size="3" class="ion-no-padding" (click)="Navigate('/home')">
           <div style="text-align: center">
             <div>
               <ion-icon slot="start" name="list"></ion-icon>
