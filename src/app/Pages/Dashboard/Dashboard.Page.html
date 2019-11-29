@@ -1,76 +1,187 @@
 
 <style>
     .p-tiles div {
-        background-color: #efefef;
+        background-color: #fff;
         padding: 4px;
-        margin: 2px;
-        border-bottom: 2px solid #5165c0
+        margin: 3px;
+        /* border-bottom: 2px solid #ca3333; */
+        box-shadow: 0px 1px 3px #dfdfdf;
     }
     .p-tiles div div:nth-child(1){
         font-weight: bold !important;
         border: none;
+        box-shadow: none;
+        font-size: 18px;
+        color: #444444;
+        vertical-align: middle;
+        
+        ;
+        
     }
     .p-tiles div div:nth-child(2){
         font-size: 13px !important; 
         border: none;
+        box-shadow: none;;
+        margin-top: 0px;;
+    }
+
+    .s-tiles div {
+        background-color: #fff;
+        padding: 4px;
+        margin: 3px;
+        /* border: 2px solid #ca3333; */
+        box-shadow: 0px 1px 3px #dfdfdf;
+    }
+    .s-tiles div div:nth-child(1){
+        font-weight: bold !important;
+        border: none;
+        box-shadow: none;;
+        vertical-align: baseline;;
+        padding: none;
+        
+    }
+    .s-tiles div div:nth-child(2){
+        font-size: 13px !important; 
+        border: none !important;
+        box-shadow: none;;
+        padding:  none !important;
+    }
+    .s-tiles div div:nth-child(3){
+        font-size: 12px !important; 
+        border: none !important;
+        box-shadow: none;;
+        padding:  none !important;
+        margin-top: -10px;;
     }
 </style>
 
-<div style="padding-top:8px ">
+<div style="padding:8px ">
 
     
-    <div style="padding: 10px;background-color: white;box-shadow: 0px 1px 3px #22222222">
-           <div style="padding: 8px 0px;"> <strong>Overview</strong></div>
-           <div style="text-align: center;padding: 4px;">
+    <div style="padding: 0px;margin-bottom: 8px;;">
+           
+           <div style="text-align: center;padding: 0px;">
                <div style="display: flex;" class="p-tiles">
                     <div style="flex: 1">
-                            <div>20</div>
-                            <div>Creators</div>
+                         <div style="display: flex;">
+                            <div>
+                                <ion-icon style="color: #d83232;font-size:28px !important" slot="icon-only" name="person-add"></ion-icon>
+                            </div>
+                             <div style="margin-left: -6px">
+                                    <div >{{Dashboard.Tiles.users}}</div>
+                                   
+                             </div>   
+                         </div>
+                         <div style="margin-top: -22px;font-size: 11px !important;">CREATORS</div>
                     </div>
                     <div style="flex: 1">
-                            <div>200 </div>
-                            <div>Contents</div>
+                            <div style="display: flex;">
+                                    <div>
+                                        <ion-icon style="color: #6597EC;font-size:28px !important" slot="icon-only" name="text"></ion-icon>
+                                    </div>
+                                     <div style="margin-left: -6px">
+                                            <div >{{Dashboard.Tiles.contentL}}</div>
+                                           
+                                     </div>   
+                                 </div>
+                                 <div style="margin-top: -22px;font-size: 11px !important;text-transform: uppercase;">Contents Left</div>
+                            
+                           
                     </div>
                    
                     <div style="flex: 1">
-                            <div>200</div>
-                            <div>Total</div>
+                            <div style="display: flex;">
+                                    <div>
+                                        <ion-icon style="color: #68EC65;font-size:28px !important" slot="icon-only" name="list-box"></ion-icon>
+                                    </div>
+                                     <div style="margin-left: -6px">
+                                            <div >{{Dashboard.Tiles.contentT}}</div>
+                                           
+                                     </div>   
+                                 </div>
+                                 <div style="margin-top: -22px;font-size: 11px !important;text-transform: uppercase;">Total Content</div>
+                            
+                          
                     </div>
                </div>
            </div>
     </div>
-    <div style="border-top: 1px solid #efefef;padding: 10px;background-color: white;box-shadow: 0px 1px 3px #22222222">
+    <div style="border-top: 1px solid #efefef;padding: 10px;background-color: white;box-shadow: 0px 1px 3px #dfdfdf;border-radius: 8px;">
             
-        <div>
+        <!-- <div>
           
                <ion-text color="danger" style="font-weight: bold">
                    <small> Very few contents are left. Please create some contents.</small>
                </ion-text>
                  
         </div>
-        <hr/>
-        <div style="border-top: 1px solid #efefef">
-            <div style="padding: 6px  0px;">
-                    <strong>Top Creators</strong>
+        <hr/> -->
+        <div style="display: flex;">
+          <div style="flex: 0.8;">
+                <div style="padding: 6px  0px;font-size: 14px;border-bottom: 1px solid #efefef;;">
+                        <strong style="color: #3159da;">TOP CREATORS</strong>
+                        <div><span style="font-size: 11px;">Top 5 users based on no of contents created</span></div>
+                </div>
+                <div style="padding: 4px;">
+    
+                    <ul style="list-style: none;margin: 0px;padding: 0px;">
+    
+                        <li style="padding: 10px 5px;;font-size: 13px;font-weight: bold;color:#555555;;;" *ngFor="let user of Dashboard.TopUsers">
+                            {{user.user}}
+                            <span style="float: right;margin-top: -10px;"> 
+                            <ion-chip color="secondary" mode="ios" size="large" outline="false">
+                                <ion-label>{{user.posts}}</ion-label>
+                            </ion-chip> 
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+          </div>
+          <div style="flex: 0.2;">
+            <strong style="color: #2e701e;float: right;">F</strong>
+            <div>
+                    <span style="visibility: hidden;">d</span>
             </div>
-            <div style="padding: 4px;">
-
-                <ul style="list-style: none;margin: 0px;padding: 0px;">
-
-                    <li style="padding: 7px;" *ngFor="let item of [1,2,3,4,5]">
-                        Mukul Singh
-                        <span style="float: right;margin-top: -10px;"> 
-                        <ion-chip color="secondary" mode="md" size="small" outline="false">
-                            <ion-label>10</ion-label>
-                        </ion-chip> 
-                        </span>
-                    </li>
-                </ul>
+            <div style="min-height: 250px;border-radius: 4px;position: relative;;background-color: #dfdfdf;margin: 0px 30px;box-shadow: 0px 1px 3px #dfdfdf;">
+                    <span style="visibility: hidden;">d</span>
+                    <div style="position: relative;top:130px;height: 100px;background-color: #37cc63;">
+                            <span style="visibility: hidden;">d</span>
+                    </div>
             </div>
+            <strong style="color: #d83232;float: right;">E</strong>
+            
+          </div>
             
             
 
         </div>
+     </div>
+     <div style="padding: 0px;margin-top: 8px;;">
+           
+            <div style="text-align: center;padding: 0px;">
+                <div style="display: flex;" class="s-tiles">
+                     <div style="flex: .3">
+                            <div style="display: flex;">
+                                    <div>
+                                        <ion-icon style="color: #e6571f;font-size:28px !important" slot="icon-only" name="cloud-upload"></ion-icon>
+                                    </div>
+                                     <div style="margin-left: -6px;font-size: 18px !important;">
+                                            <div >30</div>
+                                           
+                                     </div>   
+                                 </div>
+                                 <div style="margin-top: -22px;font-size: 11px !important;text-transform: uppercase;"> Contributed</div>
+                            
+                     </div>
+                     <div style="flex: .7;text-align: left;font-size: 13px;">
+                             <div style="color: #ca3333;font-size: 14px;">TODAY'S POST </div>
+                             <div><strong style="color: #555555;">Mukul Singh</strong></div>
+                             <div>Angular Component Interaction</div>
+                     </div>
+                    
+                    
+                </div>
+            </div>
      </div>
 
 </div>

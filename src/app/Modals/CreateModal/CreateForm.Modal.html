@@ -10,11 +10,11 @@
             <div>
                 <ion-item>
                     <ion-label position="stacked">Title</ion-label>
-                    <ion-input style="font-size: 12px;"></ion-input>
+                    <ion-input [(ngModel)]="Content.Title" style="font-size: 12px;"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label position="stacked">Blocks</ion-label>
-                    <ion-input type="number"></ion-input>
+                    <ion-input type="number" (change)="onBlockUpdate()" [(ngModel)]="Content.Block" ></ion-input>
                 </ion-item>
 
             </div>
@@ -26,7 +26,7 @@
             <div class="pColor"><b> Character Scripts</b></div>
             <div><small><b>Enter the data in a story telling manner</b></small></div>
         </div>
-        <div class="ion-padding" style="background-color: #fff">
+        <div class="ion-padding" style="background-color: #fff" *ngFor="let Annots of Annotations">
             <div class="ion-padding"><b>Block 1 </b><span style="float: right">
                     <ion-icon slot="end" name="arrow-dropdown"></ion-icon>
                 </span> </div>
@@ -34,20 +34,25 @@
 
                 <ion-item>
                     <ion-label position="stacked">Left Character</ion-label>
-                    <ion-textarea type="number" style="font-size: 12px;"></ion-textarea>
+                    <ion-textarea type="number" [(ngModel)]="Annots.LeftCharacter"  style="font-size: 12px;"></ion-textarea>
                 </ion-item>
                 <ion-item>
                         <ion-label position="stacked">Right Character</ion-label>
-                        <ion-textarea type="number" style="font-size: 12px;"></ion-textarea>
+                        <ion-textarea type="number" [(ngModel)]="Annots.RightCharacter" style="font-size: 12px;"></ion-textarea>
                 </ion-item>
-                <div>
-                    <ion-button style="float: right" size="small">
-                        <ion-icon slot="start" name="arrow-round-forward" size="small" style="color: #fff !important"></ion-icon>
-                        Next
-                    </ion-button>
-                </div>
+              
 
             </div>
+        </div>
+        <div>
+            <ion-button style="float: left" size="small">
+                        <ion-icon slot="start" name="arrow-round-forward" size="small" style="color: #fff !important"></ion-icon>
+                        Previous
+            </ion-button>
+            <ion-button style="float: right" size="small">
+                <ion-icon slot="start" name="arrow-round-forward" size="small" style="color: #fff !important"></ion-icon>
+                Next
+            </ion-button>
         </div>
     </div>
 

@@ -1,15 +1,17 @@
 <ion-app>
 
   <ion-content>
-    <div class="ion-padding" style="background-color: #efefef;height: 100%;">
+    <div  style="background-color: #fff;height: 100%;">
 
       <div
-        style="text-align: center;color:White;font-weight: 600;background-color: #6486f5;border-radius:2px; ;box-shadow: 0px 2px 2px #00000033;padding: 8px;">
+        style="text-align: center;color:#fff;box-shadow: 0px 2px 3px #afafaf;;font-weight: 600;background-color: #8E44AD;margin-bottom: 10px;border-bottom-left-radius: 40%;border-bottom-right-radius: 40%;padding: 8px;">
         CodeGyaan
       </div>
     
      
-        <router-outlet></router-outlet>
+        <!-- <router-outlet></router-outlet> -->
+        
+        <ion-router-outlet></ion-router-outlet>
         
 
       </div>
@@ -20,8 +22,16 @@
   <ion-footer >
     <div style="padding: 10px;">
       <ion-row>
+            <ion-col size="3" class="ion-no-padding" (click)="Navigate('/dashboard')">
+                    <div style="text-align: center">
+                      <div>
+                        <ion-icon slot="start" name="notifications"></ion-icon>
+                      </div>
+                      <div style="margin-top: -10px"><small>Dashboard</small></div>
+                    </div>
+                  </ion-col>
         <ion-col size="3" class="ion-no-padding">
-          <div style="text-align: center" (click)="OpenCreateForm()">
+          <div style="text-align: center" (click)="OpenCreateForm()" >
             <div>
               <ion-icon slot="start" name="add"></ion-icon>
             </div>
@@ -36,15 +46,8 @@
             <div style="margin-top: -10px"><small>View Gyaan</small></div>
           </div>
         </ion-col>
-        <ion-col size="3" class="ion-no-padding">
-          <div style="text-align: center">
-            <div>
-              <ion-icon slot="start" name="notifications"></ion-icon>
-            </div>
-            <div style="margin-top: -10px"><small>Notifications</small></div>
-          </div>
-        </ion-col>
-        <ion-col size="3" class="ion-no-padding">
+       
+        <ion-col size="3" class="ion-no-padding" (click)="Navigate('/setting')">
           <div style="text-align: center">
 
             <div>

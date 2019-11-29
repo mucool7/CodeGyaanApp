@@ -1,5 +1,7 @@
 {
   "name": "CodeGyaan",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

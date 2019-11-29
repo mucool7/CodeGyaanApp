@@ -11,14 +11,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { CreateFormModal } from './Modals/CreateModal/CreateForm.Modal';
 import { DashboardPage } from './Pages/Dashboard/Dashboard.Page';
 import { HomePage } from './Pages/home/home.page';
+import { FormsModule } from '@angular/forms';
+import { BaseHttpService } from './Base/Http/BaseHttp.Service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SettingPage } from './Pages/Setting/Setting.Page';
 
 @NgModule({
-  declarations: [AppComponent,CreateFormModal,DashboardPage,HomePage],
+  declarations: [AppComponent,CreateFormModal,DashboardPage,HomePage,SettingPage],
   entryComponents: [CreateFormModal],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(),HttpClientModule, AppRoutingModule,FormsModule],
   providers: [
     StatusBar,
     SplashScreen,
+    HttpClient,
+    BaseHttpService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
